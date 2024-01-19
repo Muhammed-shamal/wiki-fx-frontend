@@ -1,0 +1,37 @@
+.search-title {
+  margin-top: 2em;
+  font-size: 44px;
+  color: #323947;
+  font-weight: 650;
+}
+
+.mt-10 {
+  margin-top: 7em;
+}
+
+.landing-hero h2 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #18214D;
+}
+
+@media (max-width:991px) {
+  .landing-hero h2{
+    font-size: 30px;
+  }
+
+  .landing-hero p{
+    font-size: 14px;
+  }
+}
+
+
+.opacity-5 {
+  opacity: 0.5 !important;
+}
+
+
+.opacity-9 {
+  opacity: 0.9 !important;
+}
