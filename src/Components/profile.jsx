@@ -1,12 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Breadcrumb, Card, Button, Image, ListGroup, Col, Row } from 'react-bootstrap';
 import './profile.css'
 //import {ReactComponent as Rank1} from ''
 
 const UserProfile = () => {
     const [activeItem, setActiveItem] = useState('rankings');
-
+    const [data, setData] = useState([]);
     const handleItemClick = (item) => { setActiveItem(item) };
+
+    const rankImages = [
+        `${process.env.PUBLIC_URL}/ranking-list logo/1.svg`,
+        `${process.env.PUBLIC_URL}/ranking-list logo/2.svg`,
+        `${process.env.PUBLIC_URL}/ranking-list logo/3.svg`,
+    ];
+
+    useEffect(() => {
+        // fetch("https://fakestoreapi.com/products?limit=5").then((response) => response.json()).then((data) => {
+        //     console.log(data)
+        //     setData(data);
+        // })
+    }, [])
+
+
+    // const fakeData = [
+    //     {
+    //         id: 1,
+    //         name: "Product 1",
+    //         image: "https://eimgjys.fxeyee.com/logo/0001698019/FXT0001698019_907528.png_wiki-template-global",
+    //         rankImg: `${process.env.PUBLIC_URL}/ranking-list logo/1.svg`,
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "Product 2",
+    //         image: "https://eimgjys.fxeyee.com/logo/637853008698807935/FXT637853008698807935_296902.jpg_wiki-template-global",
+    //         rankImg: `${process.env.PUBLIC_URL}/ranking-list logo/2.svg`,
+    //     },
+    //     {
+    //         id: 3,
+    //         name: "Product 3",
+    //         image: "https://resources1.interface003.com/web20/img/rankingList/iocn-bg.png?v=Sat%20Jan%2020%202024%2012:37:47%20GMT+0530%20(India%20Standard%20Time)",
+    //         rankImg: `${process.env.PUBLIC_URL}/ranking-list logo/3.svg`,
+    //     },
+    // ];
+
+
 
     const renderHeaderContent = () => {
         switch (activeItem) {
@@ -49,9 +86,6 @@ const UserProfile = () => {
                     </a>
                 );
 
-
-
-            // Add more cases for other items as needed
             default:
                 return null;
         }
@@ -63,7 +97,7 @@ const UserProfile = () => {
                 <div className="row">
                     <div className="col">
 
-                        <Breadcrumb className=" bg-light rounded-3  p-2 mb-4">
+                        <Breadcrumb className="bg-light rounded-3  p-2 mb-4">
                             {/* <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
                             <Breadcrumb.Item href="#">User</Breadcrumb.Item>
                             <Breadcrumb.Item active>User Profile</Breadcrumb.Item> */}
@@ -94,35 +128,101 @@ const UserProfile = () => {
                                     </ul>
                                 </div>
 
-                                <ul className="list-group list-group-flush rounded-3">
-                                    <li className="list-group-item d-flex flex-column flex-sm-row align-items-center justify-content-sm-between p-3">
-                                        <img src="https://example.com/product1.jpg" alt="Product 1" className="product-img mb-2 mb-sm-0" />
-                                        <div className="flex-grow-1 text-center text-sm-start">
-                                            <h6 className="mb-0">Product 1</h6>
-                                            <p className="text-muted mb-2">Price: $20.99</p>
-                                        </div>
-                                        {/* <Button variant="primary" className="btn-sm">Add to Cart</Button> */}
-                                        <img className='svg' src={`${process.env.PUBLIC_URL}/ranking-list logo/1.svg`} alt="Your SVG" />
-                                        
-                                    </li>
-                                    <li className="list-group-item d-flex flex-column flex-sm-row align-items-center justify-content-sm-between p-3">
-                                        <img src="https://example.com/product2.jpg" alt="Product 2" className="product-img mb-2 mb-sm-0" />
-                                        <div className="flex-grow-1 text-center text-sm-start">
-                                            <h6 className="mb-0">Product 2</h6>
-                                            <p className="text-muted mb-2">Price: $29.99</p>
-                                        </div>
-                                        <img className='svg' src={`${process.env.PUBLIC_URL}/ranking-list logo/2.svg`} alt="Your SVG" />
-                                    </li>
+                                <div className='mt-5  '>
+                                    <ul className="list-group">
+                                        {/* {data.map((value, index) => (
+                                            <li key={value.id} className="list-group-item mb-3 border-none">
+                                                <div className='row'>
+                                                    <div className='col-lg-2 col-md-4 mb-3 mb-md-0'>
+                                                        <img src={value.image} alt="Product 1" className="product-img img-fluid" />
+                                                    </div>
+                                                    <div className='col-lg-10 col-md-8'>
+                                                        <div className="d-flex flex-column flex-md-row justify-content-md-between">
+                                                            <h6 className="mb-2 mb-md-0">{value.title}</h6>
+                                                            <img className='rank mt-2 mt-md-0' src={rankImages[index % rankImages.length]} alt="Rank" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))} */}
+                                        <li className="list-group-item mb-3 border-none">
+                                            {/* row d-flex justify-content-center align-items-center h-100 */}
+                                            <div>
+                                                <div className="start-section d-lg-flex text-black">
+                                                    <div className="flex-shrink-0">
+                                                        <img
+                                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                                            alt="Generic placeholder image"
+                                                            className="img-fluid"
+                                                            style={{ width: 80, borderRadius: 10 }}
+                                                        />
+                                                    </div>
+                                                    <div className="flex-grow-1 ms-3">
+                                                        <img className='rank mt-2 mt-md-0' src={`${process.env.PUBLIC_URL}/ranking-list logo/1.svg`} alt="Rank" />
+                                                        <h5 className="mb-1">Danny McLoan</h5>
+                                                        <p className="mb-2 pb-1" style={{ color: "#2b2a2a" }}>
+                                                            Senior Journalist
+                                                        </p>
+                                                        <div
+                                                            className="d-flex justify-content-start rounded-3 p-2 mb-2"
+                                                            style={{ backgroundColor: "#efefef" }}
+                                                        >
+                                                            <div>
+                                                                <p className="small text-muted mb-1">Years</p>
+                                                                <p className="mb-0">41</p>
+                                                            </div>
+                                                            <div className="px-3">
+                                                                <p className="small text-muted mb-1">Followers</p>
+                                                                <p className="mb-0">976</p>
+                                                            </div>
+                                                            <div>
+                                                                <p className="small text-muted mb-1">Rating</p>
+                                                                <p className="mb-0">8.5</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                    <li className="list-group-item d-flex flex-column flex-sm-row align-items-center justify-content-sm-between p-3">
-                                        <img src="https://example.com/product2.jpg" alt="Product 2" className="product-img mb-2 mb-sm-0" />
-                                        <div className="flex-grow-1 text-center text-sm-start">
-                                            <h6 className="mb-0">Product 2</h6>
-                                            <p className="text-muted mb-2">Price: $29.99</p>
-                                        </div>
-                                        <img className='svg' src={`${process.env.PUBLIC_URL}/ranking-list logo/3.svg`} alt="Your SVG" />
-                                    </li>
-                                </ul>
+                                                <div className="start-section d-lg-flex text-black">
+                                                    <div className="flex-shrink-0">
+                                                        <img
+                                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                                            alt="Generic placeholder image"
+                                                            className="img-fluid"
+                                                            style={{ width: 80, borderRadius: 10 }}
+                                                        />
+                                                    </div>
+                                                    <div className="flex-grow-1 ms-3">
+                                                        <img className='rank mt-2 mt-md-0' src={`${process.env.PUBLIC_URL}/ranking-list logo/1.svg`} alt="Rank" />
+                                                        <h5 className="mb-1">Danny McLoan</h5>
+                                                        <p className="mb-2 pb-1" style={{ color: "#2b2a2a" }}>
+                                                            Senior Journalist
+                                                        </p>
+                                                        <div
+                                                            className="d-flex justify-content-start rounded-3 p-2 mb-2"
+                                                            style={{ backgroundColor: "#efefef" }}
+                                                        >
+                                                            <div>
+                                                                <p className="small text-muted mb-1">Years</p>
+                                                                <p className="mb-0">41</p>
+                                                            </div>
+                                                            <div className="px-3">
+                                                                <p className="small text-muted mb-1">Followers</p>
+                                                                <p className="mb-0">976</p>
+                                                            </div>
+                                                            <div>
+                                                                <p className="small text-muted mb-1">Rating</p>
+                                                                <p className="mb-0">8.5</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
 
                             </Card.Body>
                         </Card>
@@ -195,7 +295,7 @@ const UserProfile = () => {
                     </Col>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

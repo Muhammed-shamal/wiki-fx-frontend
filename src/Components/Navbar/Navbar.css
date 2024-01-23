@@ -64,7 +64,8 @@ input {
 
 .nav-link {
   align-items: center;
-  color: #5c2016;
+  /* color: #5c2016; */
+  color: #47cf73;
   display: flex;
   font-size: 18px;
   font-weight: 500;
@@ -81,5 +82,10 @@ input {
 }
 
 .bg-custom {
-  background: #fc6;
+  /* background: #fc6; */
+  background-color: #222428;
+}
+
+.active-link {
+  color: white;
 }

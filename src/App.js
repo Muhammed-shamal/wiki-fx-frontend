@@ -1,16 +1,17 @@
 import { React } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import 'animate.css'
+import "animate.css";
 //adding each sections of the webpage
 import Banner from "./Components/Banner/Banner";
 import { NavbarSection } from "./Components/Navbar/Navbar";
 import UserProfile from "./Components/profile";
-import YourComponent from "./Components/Navbar/practise";
+import Practise from "./Components/Navbar/practise";
+import TickerTape from "./Components/TickerType";
 
 function App() {
   const router = createBrowserRouter([{ path: "/", Component: Home }]);
   return (
-    <div className="">
+    <div className="App">
       <RouterProvider router={router} />
     </div>
   );
@@ -19,10 +20,9 @@ function App() {
 const Home = () => {
   return (
     <div>
-      <NavbarSection />
+      <Practise />
       <Banner />
-       <UserProfile />
-  
+      <UserProfile />
     </div>
   );
 };

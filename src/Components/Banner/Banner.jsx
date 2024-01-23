@@ -25,7 +25,7 @@ export default function Banner() {
                                         aria-describedby="button-addon2"
                                     />
                                     <div className="input-group-append ms-2">
-                                        <button className={`${window.innerWidth < 500 ? 'mt-1 btn btn-primary btn-sm' : 'btn btn-primary '}`} type="button" id="button-addon2">
+                                        <button className={`${window.innerWidth < 500 ? 'mt-1 btn btn-primary btn-sm' : 'btn btn-primary btn-md'}`} type="button" id="button-addon2">
                                             Get Started
                                         </button>
                                     </div>

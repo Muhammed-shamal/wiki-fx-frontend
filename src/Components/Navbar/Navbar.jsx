@@ -13,19 +13,19 @@ export const NavbarSection = () => {
   };
 
   return (
-    <Navbar className='bg-custom'  expand="lg" fixed="top">
+    <Navbar className='bg-custom' expand="lg" fixed="top">
       <div className="container">
-        <Navbar.Brand href="#home">WikiFx</Navbar.Brand>
+        <Navbar.Brand href="#home" style={{ color: "whitesmoke" }}>WikiFx</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleNavToggle} />
         <Navbar.Collapse id="basic-navbar-nav" className={`justify-content-end ${isNavCollapsed ? 'collapse' : ''}`}>
           <Nav className="mx-auto">
             {/* Use Link component instead of Nav.Link */}
-            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-            <Link to="/brokers" className={`nav-link ${location.pathname === '/brokers' ? 'active' : ''}`}>Brokers</Link>
-            <Link to="/ranking-list" className={`nav-link ${location.pathname === '/ranking-list' ? 'active' : ''}`}>Ranking List</Link>
-            <Link to="/education" className={`nav-link ${location.pathname === '/education' ? 'active' : ''}`}>Education</Link>
-            <Link to="/news" className={`nav-link ${location.pathname === '/news' ? 'active' : ''}`}>News</Link>
-            <Link to="/contact-us" className={`nav-link ${location.pathname === '/contact-us' ? 'active' : ''}`}>Contact Us</Link>
+            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active-link' : ''}`}>Home</Link>
+            <Link to="/brokers" className={`nav-link ${location.pathname === '/brokers' ? 'active-link' : ''}`}>Brokers</Link>
+            <Link to="/ranking-list" className={`nav-link ${location.pathname === '/ranking-list' ? 'active-link' : ''}`}>Ranking List</Link>
+            <Link to="/education" className={`nav-link ${location.pathname === '/education' ? 'active-link' : ''}`}>Education</Link>
+            <Link to="/news" className={`nav-link ${location.pathname === '/news' ? 'active-link' : ''}`}>News</Link>
+            <Link to="/contact-us" className={`nav-link ${location.pathname === '/contact-us' ? 'active-link' : ''}`}>Contact Us</Link>
           </Nav>
           <Nav className="flex-row">
             <Nav.Link href="#youtube">
