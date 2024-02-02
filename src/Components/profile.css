@@ -43,6 +43,7 @@
 
 .broker-list {
   background: #fff;
+  border-radius: 10px;
   border: 6px solid rgba(0, 89, 255, 0.2);
 }
 

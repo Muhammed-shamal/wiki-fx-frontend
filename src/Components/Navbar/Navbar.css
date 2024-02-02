@@ -1,67 +1,7 @@
-/* .wiki-head {
-  position: fixed;
-  width: 100%;
-  z-index: 1999;
+.bg-custom{
+  margin-top: 1em;
 }
-
-.wiki-head .primary-head {
-  background: #323947;
-  position: relative;
-}
-
-.wiki-head .primary-head .page-width {
-  align-items: center;
-  display: flex;
-  height: 82px;
-  justify-content: space-between;
-}
-
-.page-width {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-@media (max-width:990px) {
-    .page-width {
-        padding-left: 1em;
-    }
-}
-
-.bg-custom {
-  background-color: #fc6;
-}
-
-#navbarSupportedContent > ul > li:nth-child(n) {
-  padding-right: 50px;
-}
-
-li a:hover {
-  background: rgba(92, 32, 22, 0.12);
-  border-radius: 55px;
-}
-
-input {
-  color: #3d3d3d;
-  font-size: 16px;
-}
-
-.nav-item {
-  align-items: center;
-  color: #5c2016;
-  display: flex;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 25px;
-  margin-right: 23px;
-  position: relative;
-  white-space: nowrap;
-}
-
-.brand-name {
-  color: white;
-  font-weight: 650;
-} */
-
+ 
 .nav-link {
   align-items: center;
   /* color: #5c2016; */
@@ -75,10 +15,13 @@ input {
   white-space: nowrap;
   margin-right: 10px;
 }
+ 
+.nav-link:hover{
+  color: green;
+}
 
-.nav-link:hover {
-  background: rgba(92, 32, 22, 0.12);
-  border-radius: 55px;
+.active-link:hover{
+  color: black;
 }
 
 .bg-custom {
@@ -86,6 +29,7 @@ input {
   background-color: #222428;
 }
 
-.active-link {
+.bg-custom .active-link {
   color: white;
 }
+

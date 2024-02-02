@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Breadcrumb, Card, Button, Image, ListGroup, Col, Row } from 'react-bootstrap';
+import { Breadcrumb, Card, Button, Image, ListGroup, Col, Row, Carousel, Container } from 'react-bootstrap';
 import './profile.css'
 //import {ReactComponent as Rank1} from ''
 
@@ -145,7 +145,7 @@ const UserProfile = () => {
                                                 </div>
                                             </li>
                                         ))} */}
-                                        <li className="list-group-item mb-3 border-none">
+                                        <li className="list-group-item mb-3  ">
                                             {/* row d-flex justify-content-center align-items-center h-100 */}
                                             <div>
                                                 <div className="start-section d-lg-flex text-black">
@@ -217,13 +217,10 @@ const UserProfile = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-
-
                             </Card.Body>
                         </Card>
                         </div>
@@ -290,6 +287,7 @@ const UserProfile = () => {
                                     </Row>
                                 </Card>
                             </div>
+
 
                         </Col>
                     </Col>

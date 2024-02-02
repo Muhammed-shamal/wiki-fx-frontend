@@ -1,3 +1,35 @@
 .bg-custom{
   margin-top: 1em;
 }
+ 
+.nav-link {
+  align-items: center;
+  /* color: #5c2016; */
+  color: #47cf73;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-right: 23px;
+  position: relative;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+ 
+.nav-link:hover{
+  color: green;
+}
+
+.active-link:hover{
+  color: black;
+}
+
+.bg-custom {
+  /* background: #fc6; */
+  background-color: #222428;
+}
+
+.bg-custom .active-link {
+  color: white;
+}
+

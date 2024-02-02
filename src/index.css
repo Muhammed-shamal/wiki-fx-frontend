@@ -15,9 +15,11 @@ code {
 }
 */
 
-a{text-decoration: none;} 
+a {
+  text-decoration: none;
+}
 
 body {
-  background-color: #E5E5E5;
+  background-color: white;
   background: url("../public/banner_bg_dark.png");
 }
