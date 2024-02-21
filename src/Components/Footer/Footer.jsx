@@ -18,40 +18,12 @@ width: 100px; /* Adjust the size as needed */
 height: auto;
 animation: ${spinAnimation} 3s linear infinite; /* Adjust the animation duration as needed */`
 
-export default function Footer() {
+export default function Footer(props) {
     return (
-        <div>
+        <div hidden={props.isHide}>
             <>
-                <div className="footer-section py-5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h4 class="mb-1">Thank you for your support!</h4>
-                                <p class="lead mb-0">Delivering the best products</p>
-                            </div>
-                            <div class="col-lg-6 buttons">
-                                <a href="javascript:;" className="ms-5 btn btn-twitter mb-0 me-2">
-                                    <i className="fab fa-twitter  " aria-hidden="true"></i> Twitter
-                                </a>
-                                <a href="javascript:;" className="btn btn-facebook mb-0 me-2">
-                                    <i className="fab fa-facebook-square  " aria-hidden="true"></i> Facebook
-                                </a>
-                                <a href="javascript:;" className="btn btn-dribbble mb-0 me-2">
-                                    <i className="fab fa-instagram " aria-hidden="true"></i> Instagram
-                                </a>
-
-                                <a href="javascript:;" className="btn btn-whatsapp mb-0 me-2">
-                                    <i className="fab fa-whatsapp  " aria-hidden="true"></i> Whatsapp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
                 {/* Footer */}
-                <footer className="text-center text-lg-start bg-body-tertiary text-muted">
+                <footer className="footer-bg text-center text-lg-start">
                     {/* Section: Social media */}
                     <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
@@ -69,37 +41,38 @@ export default function Footer() {
                                         <i className="fas fa-gem me-3" />
                                         Company name
                                     </h6>
-                                    <p>
+                                    <p className='footer-desc'>
                                         Welcome to our trading site! We offer the best,
                                         most affordable products and services around.
                                         Shop now and start finding great deals!
                                     </p>
 
-                                    <SpinningImage src={`${process.env.PUBLIC_URL}/cta_shape1.png`} />
+                                    <SpinningImage src={`${process.env.PUBLIC_URL}/cta_shape1.png`} className='rotating-btc' />
                                 </div>
                                 {/* Grid column */}
                                 {/* Grid column */}
                                 <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                                     {/* Links */}
-                                    <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+                                    <h6 className="text-uppercase fw-bold mb-4">Support</h6>
                                     <p>
-                                        <a href="#!" className="text-reset">
-                                            one
+                                        <a href="#!"  >
+                                            <span className='elementor-icon-list-text'>  Terms & Conditions</span>
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="#!" className="text-reset">
-                                            two
+
+                                        <a href="#!"  >
+                                            <span className='elementor-icon-list-text'>  Privacy Policy</span>
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="#!" className="text-reset">
-                                            trhee
+                                        <a href="#!"  >
+                                            <span className='elementor-icon-list-text'>  FAQs</span>
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="#!" className="text-reset">
-                                            four
+                                        <a href="#!"  >
+                                            <span className='elementor-icon-list-text'>  Support Center</span>
                                         </a>
                                     </p>
                                 </div>
@@ -107,25 +80,26 @@ export default function Footer() {
                                 {/* Grid column */}
                                 <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                                     {/* Links */}
-                                    <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+                                    <h6 className="text-uppercase fw-bold mb-4">Quick links</h6>
                                     <p>
-                                        <a href="#!" className="text-reset">
-                                            Pricing
+                                        <a href="#!"  >
+                                            <span className='elementor-icon-list-text'>  About</span>
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="#!" className="text-reset">
-                                            Settings
+
+                                        <a href="#!"  >
+                                            <span className='elementor-icon-list-text'>  Service</span>
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="#!" className="text-reset">
-                                            Orders
+                                        <a href="#!"  >
+                                            <span className='elementor-icon-list-text'>  Contact</span>
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="#!" className="text-reset">
-                                            Help
+                                        <a href="#!"  >
+                                            <span className='elementor-icon-list-text'>  Help</span>
                                         </a>
                                     </p>
                                 </div>
@@ -135,11 +109,11 @@ export default function Footer() {
                                     {/* Links */}
                                     <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                                     <p>
-                                        <i className="fas fa-home me-3" /> New York, NY 10012, US
+                                        <i className="fas fa-home me-3" /> New York, NY 10012, US : address
                                     </p>
                                     <p>
                                         <i className="fas fa-envelope me-3" />
-                                        info@example.com
+                                        something@example.com
                                     </p>
                                     <p>
                                         <i className="fas fa-phone me-3" /> + 01 234 567 88
@@ -153,28 +127,30 @@ export default function Footer() {
                             {/* Grid row */}
                         </div>
                     </section>
+
+                    <div className='container'><hr />
+                        <div
+                            className="justify-content-between d-lg-flex d-sm-block p-4"
+                        >
+                            <div className='footer-left-side-text'> © 2024 Copyright:
+                                <a className="ms-2 text-reset fw-bold" href="https://mdbootstrap.com/">
+                                    domain.com
+                                </a></div>
+
+                            <div className='footer-right-side-icon'><a href="" className="ms-3 me-4 text-reset">
+                                <i className="fab fa-facebook-f" />
+                            </a>
+                                <a href="" className="me-4 text-reset">
+                                    <i className="fab fa-twitter" />
+                                </a>
+
+                                <a href="" className="me-4 text-reset">
+                                    <i className="fab fa-instagram" />
+                                </a></div>
+                        </div></div>
                     {/* Section: Links  */}
                     {/* Copyright */}
-                    <div
-                        className="text-center p-4"
-                        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-                    >
-                        © 2021 Copyright:
-                        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-                            MDBootstrap.com
-                        </a>
 
-                        <a href="" className="ms-3 me-4 text-reset">
-                            <i className="fab fa-facebook-f" />
-                        </a>
-                        <a href="" className="me-4 text-reset">
-                            <i className="fab fa-twitter" />
-                        </a>
-
-                        <a href="" className="me-4 text-reset">
-                            <i className="fab fa-instagram" />
-                        </a>
-                    </div>
                     {/* Copyright */}
                 </footer>
                 {/* Footer */}

@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.edu-active {
+  color: #5e2ced;
+}
+
+.edu-nav-link {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.015625em;
+}
+
+.edu-nav-link:hover {
+  color: #5e2ced;
+}
+
+.shadow-2 {
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .top-wrap {
+    display: none;
+  }
+}
+
+.social-media .fab {
+  color: #5e2ced;
+}
+
+.top-wrap .navbar-brand {
+  font-weight: 800;
+  font-size: 30px;
+  color: #5e2ced;
+  z-index: 3;
+  position: relative;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.top-wrap .navbar-brand a:hover {
+  text-decoration: none;
+  color: #1eb2a6;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.top-wrap .navbar-brand span {
+  color: #5e2ced;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: block;
+  font-weight: 500;
+}
+
+/*
+
+.top-wrap .navbar-brand {
+  font-weight: 800;
+  font-size: 30px;
+  color: #fff;
+  z-index: 3;
+  position: relative;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.top-wrap .navbar-brand a:hover {
+  text-decoration: none;
+  color: #1eb2a6;
+  outline: none !important;
+
+  box-shadow: none !important;
+}
+
+.top-wrap .navbar-brand span {
+  color: #fff;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: block;
+  font-weight: 500;
+}
+
+.top-wrap .con .text {
+  padding-left: 10px;
+}
+
+.top-wrap .social-media {
+  display: inline-block;
+}
+
+.top-wrap .social-media p a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 4px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.top-wrap .con .text span,
+.top-wrap .con .text strong {
+  display: block;
+  line-height: 1.4;
+  color: #fff;
+} */

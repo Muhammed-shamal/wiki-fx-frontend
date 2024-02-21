@@ -1,57 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import { APIKEY } from '../../Constants/constantUrl';
-import axios from '../../Constants/axios';
-import styled, { keyframes } from 'styled-components';
-
-const scroll = keyframes`
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-`;
-
-const TickerContainer = styled.div`
-  overflow: hidden;
-  white-space: nowrap;
-  background-color:white;
-`;
+import React, { useEffect, useState } from "react";
+import { Currency_APIKEY } from "../../Constants/constantUrl";
+import { Currency_instance } from "../../Constants/axios";
+import Marquee from "react-fast-marquee";
+import styled from "styled-components";
 
 const TickerText = styled.div`
   display: inline-block;
-  animation: ${scroll} 7s linear infinite;
-  margin-right:1.4rem;
-  font-size:18px;
-  font-weight:bold;
-   
+  margin-right: 1.4rem;
   span {
-     color: #089981; 
-   // color:#2b2a5dd6;
+    color: #089981;
   }
+  font-size: 18px;
+  font-weight: 650;
 `;
 
 export default function Currency() {
   const [currencyPairs, setCurrencyPairs] = useState([]);
 
   useEffect(() => {
-    axios.get(`/v1/latest?apikey=${APIKEY}`).then((response) => {
-      const currencies = response.data.data; // Assuming currencies is an object
-      setCurrencyPairs(Object.entries(currencies).map(([currency, price]) => ({ currency, price })));
-    });
+    let fetchData = async () => {
+      try {
+        let response = (
+          await Currency_instance.get(`/v1/latest?apikey=${Currency_APIKEY}`)
+        ).data.data;
+
+        setCurrencyPairs(
+          Object.entries(response).map(([currency, price]) => ({
+            currency,
+            price,
+          }))
+        );
+      } catch (error) {
+        console.error("Error fetching currency Data", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
-
   return (
-    <div className='mt-2'>
-      <TickerContainer>
+    <div className="mt-2">
+      <Marquee
+        style={{ backgroundColor: "rgb(249,250,251" }}
+        className="overlay"
+        gradientColor="rgba(248, 251, 253, 1), rgba(248, 251, 253, 0);"
+        pauseOnClick
+      >
         {currencyPairs.map((pair, index) => (
-          <TickerText key={index}>
-
-            <span>{pair.currency}:</span> {pair.price}
+          <TickerText>
+            <span>
+              <span style={{ color: "red" }}>USD / </span>
+              {pair.currency}:
+            </span>
+            {pair.price}
           </TickerText>
         ))}
-      </TickerContainer>
+      </Marquee>
     </div>
   );
 }

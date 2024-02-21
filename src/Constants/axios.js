@@ -1,6 +1,5 @@
 import axios from "axios";
-import { baseUrl } from "./constantUrl";
+import { baseURLNews, baseUrlCurrency } from "./constantUrl";
 
-const instance = axios.create({ baseURL: baseUrl });
-
-export default instance;
+export const Currency_instance = axios.create({ baseURL: baseUrlCurrency });
+export const News_instance = axios.create({ baseURL: baseURLNews });

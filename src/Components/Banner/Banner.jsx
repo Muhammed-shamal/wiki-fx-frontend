@@ -1,8 +1,14 @@
-import React from 'react'
-import './Banner.css'
-import { Col, Container, Row } from 'react-bootstrap'
-import { keyframes, styled } from 'styled-components'
-
+import React from "react";
+import "./Banner.css";
+import { CardText, CardTitle, Col, Container, Row } from "react-bootstrap";
+import { keyframes, styled } from "styled-components";
+import {
+  MDBCardTitle,
+  MDBCardText,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+} from "mdb-react-ui-kit";
 
 const spinAnimation = keyframes`
   from {
@@ -13,110 +19,182 @@ const spinAnimation = keyframes`
   }
 `;
 
-const SpinningImage = styled.img`display: block;
-margin: auto;
-width: 150px; /* Adjust the size as needed */
-height: 150px;
-animation: ${spinAnimation} 3s linear infinite; /* Adjust the animation duration as needed */`
+const SpinningImage = styled.img`
+  display: block;
+  margin: auto;
+  width: 150px; /* Adjust the size as needed */
+  height: 150px;
+  animation: ${spinAnimation} 3s linear infinite; /* Adjust the animation duration as needed */
+`;
 
 export default function Banner() {
+  return (
+    <>
+      <Container>
+        <Row className="mt-7">
+          <Col>
+            <div className="landing-hero">
+              <div style={{ opacity: ".7" }}>
+                <SpinningImage
+                  src={`${process.env.PUBLIC_URL}/banner_coin.png`}
+                  className="img-fluid rotating-btc"
+                  alt="logo"
+                />
+              </div>
+              <div className="offset-md-2 col-md-8 text-center">
+                <h2>A trusted and secure cryptocurrency exchange.</h2>
+                <p>
+                  Crypto is the most advanced UI kit for making the Blockchain
+                  platform. This kit comes with 4 different exchange page,
+                  market, wallet and many more
+                </p>
+                <div className="input-group">
+                  <input
+                    class="search__input"
+                    type="text"
+                    placeholder="Please enter the name of the broker for inquiries"
+                    aria-label="Please enter the name of the broker for inquiries"
+                    aria-describedby="button-addon2"
+                  />
+                </div>
 
-    return (
-        <>
-            <Container>
-                <Row className='mt-7'>
-                    <Col>
-                        <div className='landing-hero'>
-                            <div style={{ opacity: '.7' }}>
-                                <SpinningImage src={`${process.env.PUBLIC_URL}/banner_coin.png`} className='img-fluid' alt='logo' /></div>
-                            <div className="offset-md-2 col-md-8 text-center">
-                                <h2  >A trusted and secure cryptocurrency exchange.</h2>
-                                <p  >
-                                    Crypo is the most advanced UI kit for making the Blockchain platform. This
-                                    kit comes with 4 different exchange page, market, wallet and many more
-                                </p>
-                                <div className="input-group">
-                                    {/* <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="Please enter the name of the broker for inquiries"
-                                        aria-label="Please enter the name of the broker for inquiries"
-                                        aria-describedby="button-addon2"
-                                    /> */}
+                {/* <div className='currency-slot'>
+                                    <div className="p-2 rounded-md bg-blue-900 ">
+                                        <span className='currency-icon'><i class="fa-solid fa-dollar-sign"></i> </span>
+                                    </div>
+                                    <div className="p-2 rounded-md bg-blue-900   ">
+                                        <span className='currency-icon'><i class="fa-solid fa-euro-sign"></i> </span>
+                                    </div>
+                                    <div className="p-2 rounded-md bg-blue-900   ">
+                                        <span className='currency-icon'><i class="fa-solid fa-indian-rupee-sign"></i> </span>
+                                    </div>
 
-                                    <input class="search__input" type="text"
-                                        placeholder="Please enter the name of the broker for inquiries"
-                                        aria-label="Please enter the name of the broker for inquiries"
-                                        aria-describedby="button-addon2" />
+                                    <div className="p-2 rounded-md bg-blue-900  ">
+                                        <span className='currency-icon'><i class="fa-solid fa-dollar-sign"></i> </span>
+                                    </div>
+                                </div> */}
+              </div>
+            </div>
 
-                                    {/* <div className="input-group-append ms-2">
-                                        <button className={`${window.innerWidth < 500 ? 'mt-1 btn btn-primary btn-sm' : 'btn btn-primary btn-md'}`} type="button" id="button-addon2">
-                                            Get Started
-                                        </button>
-                                    </div> */}
-                                </div>
-                            </div>
-                        </div>
+            <section className="pddg_sec ">
+              <Container>
+                <Row>
+                  {/* <Col lg={6} md={6}>
+                                        <div className='left'>
+                                            <h2 className='head'>Learn all about the Stock Market</h2>
+                                            <p className='desc'>
+                                                With our jargon-free and expert-led Courses, Webinars, Events and self-help Videos
+                                            </p>
+                                        </div>
+                                    </Col> */}
 
-                        {/* trusted clients , or partership */}
-                        {/* <div className='py-5'>
-                            <div class="row">
-                                <div class="col-8 mx-auto text-center">
-                                    <h6 class="opacity-5"> More than 50+ brands trust Soft</h6>
-                                </div>
-                            </div>
-                            <div className="row mt-4">
-                                <div className="col-lg-2 col-md-4 col-6 mb-4">
-                                    <img
-                                        className="w-100 opacity-9"
-                                        src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img//logos/gray-logos/logo-coinbase.svg"
-                                        alt="logo"
-                                    />
-                                </div>
-                                <div className="col-lg-2 col-md-4 col-6 mb-4">
-                                    <img
-                                        className="w-100 opacity-9"
-                                        src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img//logos/gray-logos/logo-nasa.svg"
-                                        alt="logo"
-                                    />
-                                </div>
-                                <div className="col-lg-2 col-md-4 col-6 mb-4">
-                                    <img
-                                        className="w-100 opacity-9"
-                                        src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img//logos/gray-logos/logo-netflix.svg"
-                                        alt="logo"
-                                    />
-                                </div>
-                                <div className="col-lg-2 col-md-4 col-6 mb-4">
-                                    <img
-                                        className="w-100 opacity-9"
-                                        src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img//logos/gray-logos/logo-pinterest.svg"
-                                        alt="logo"
-                                    />
-                                </div>
-                                <div className="col-lg-2 col-md-4 col-6 mb-4">
-                                    <img
-                                        className="w-100 opacity-9"
-                                        src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img//logos/gray-logos/logo-spotify.svg"
-                                        alt="logo"
-                                    />
-                                </div>
-                                <div className="col-lg-2 col-md-4 col-6 mb-4">
-                                    <img
-                                        className="w-100 opacity-9"
-                                        src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img//logos/gray-logos/logo-vodafone.svg"
-                                        alt="logo"
-                                    />
-                                </div>
-                            </div>
-                        </div> */}
-                    </Col>
+                  <Col lg={6} md={6}>
+                    <div className="left">
+                      <MDBCard
+                        style={{
+                          backgroundColor: "#f2ecfd",
+                          borderRadius: "8px",
+                        }}
+                        border="none"
+                      >
+                        <MDBCardImage
+                          fluid
+                          src={`${process.env.PUBLIC_URL}/market-share-competitor-excellent-growing-with-stocks.jpg`}
+                          style={{
+                            borderTopLeftRadius: "8px",
+                            borderTopRightRadius: "8px",
+                          }}
+                        />
+                        <MDBCardBody>
+                          <a href="#">
+                            {" "}
+                            <MDBCardTitle className="head">
+                              Learn all about the Stock Market
+                            </MDBCardTitle>
+                          </a>
+                          <MDBCardText className="desc">
+                            Online sessions on Risk Management, Options Trading,
+                            Technical Analysis and more
+                          </MDBCardText>
+                        </MDBCardBody>
+                      </MDBCard>
+                    </div>
+                  </Col>
+
+                  <Col className="right">
+                    <div className="media-object">
+                      <MDBCard
+                        border="none"
+                        style={{
+                          backgroundColor: "#f2ecfd",
+                          borderRadius: "8px",
+                        }}
+                      >
+                        <Row>
+                          <Col sm={6} lg={5}>
+                            <MDBCardImage
+                              style={{
+                                minWidth: "171px",
+                                maxWidth: 175,
+                                borderEndStartRadius: "8px",
+                              }}
+                              src={`${process.env.PUBLIC_URL}/learn_all_img2.png`}
+                              fluid
+                            />
+                          </Col>
+                          <Col sm={6} lg={7} className="media-body">
+                            <a href="/education-Educate-yourself">
+                              <CardTitle>Education Center</CardTitle>
+                            </a>
+                            <CardText>
+                              Learn the fundamentals of trading and gain a
+                              deeper understanding of how the stock market
+                              operates through our educational resources
+                            </CardText>
+                          </Col>
+                        </Row>
+                      </MDBCard>
+                    </div>
+
+                    <div className="media-object">
+                      <MDBCard
+                        border="none"
+                        style={{
+                          backgroundColor: "#f2ecfd",
+                          borderRadius: "8px",
+                        }}
+                      >
+                        <Row>
+                          <Col sm={6}>
+                            <MDBCardImage
+                              fluid
+                              src={`${process.env.PUBLIC_URL}/9978009.jpg`}
+                              style={{ borderEndStartRadius: "8px" }}
+                            />
+                          </Col>
+                          <Col sm={6} className="media-body">
+                            <a href="/news">
+                              <CardTitle>
+                                Stay Informed: Latest News in Trading and Stock
+                                Markets
+                              </CardTitle>
+                            </a>
+                            <CardText>
+                              {" "}
+                              The million-dollar question in online trading
+                              boils down to no more than 'Which should I pick?'
+                            </CardText>
+                          </Col>
+                        </Row>
+                      </MDBCard>
+                    </div>
+                  </Col>
                 </Row>
-            </Container>
-        </>
-
-
-    )
+              </Container>
+            </section>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
 }
-
-

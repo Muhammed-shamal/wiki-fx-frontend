@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* @media (min-width: 960px) {
+} */
+
+.section1 {
+  background-color: white;
+}
+
+.section2 {
+  background-color: white;
+}
+
+.section3 {
+  background-color: white;
+}
+
+.section1 .img-left {
+  border-radius: 0;
+}
+
+.education-page {
+  margin-top: 2rem;
+  font-family: "Roboto", Arial, sans-serif;
+  background-image: url("20289169_6256458.jpg");
+  background-size: cover;
+  min-height: 80vh;
+}
+
+.btn_get_three {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #5e2ced;
+  border-color: #5e2ced;
+  color: #fff;
+}
+
+.line-long-area {
+  width: 100%;
+  padding: 12px min(10%, 6.25rem);
+  flex: 100%;
+}
+
+.line-long {
+  border-bottom: 8px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+/* CSS */
+.text-with-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #333; /* Change color as needed */
+  transition: color 0.3s, border-bottom-width 0.3s;
+}
+
+.text-with-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid transparent; /* Initial transparent underline */
+  transition: border-bottom-width 0.3s, border-bottom-color 0.3s;
+}
+
+.text-with-underline:hover {
+  color: #5e2ced; /* Change color on hover as needed */
+}
+
+.text-with-underline:hover::after {
+  border-bottom-width: 2px; /* Increase border width on hover */
+  border-bottom-color: #5e2ced; /* Change border color on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .no-gutters h1,
+  .desc {
+    color: black;
+  }
+
+  .btn_get_three {
+    font-size: small;
+  }
+
+  .right-border{
+    margin-top: 2rem;
+  }
+
+  .section2 h3{
+    margin-top: 2rem;
+  }
+}
+
+.right-border {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #e0e3eb;
+  box-sizing: border-box;
+  height: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.right-border h3 {
+  color: #131722;
+  line-height: 28px;
+}
+
+/* .right-border h3:hover {
+  color: #5e2ced;
+  transition: 0.4s linear;
+} */
+
+.card-small-title {
+  color: #131722;
+}
+
+/* .card-small-title:hover {
+  color: #5e2ced;
+  transition: 0.4s linear;
+} */
+
+.like-btn {
+  font-size: x-large;
+}
+
+.share-btn {
+  font-size: larger;
+}

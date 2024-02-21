@@ -104,7 +104,7 @@ export default function Contact() {
                                         <div className="d-flex justify-content-center">
                                             <button
                                                 type="button"
-                                                className="btn btn-custom-green btn-block btn-lg gradient-custom-4 text-body"
+                                                className="btn btn-custom-green text-body"
                                             >
                                                 Register
                                             </button>
@@ -156,7 +156,9 @@ export default function Contact() {
                                             <a href="mailto:hr@foxiom.com">info@dhanwis.com</a>
                                         </h6>
                                     </div>
+
                                 </Col>
+
 
                                 {/* Call section */}
                                 <Col>
@@ -177,11 +179,12 @@ export default function Contact() {
                                                 <a href="tel:+96566011953">+965 66011953</a>
                                             </span>
                                         </h6>
-
                                     </div>
-
                                 </Col>
                             </Row>
+                            <div style={{ maxInlineSize: '33ch', marginTop: '1rem' }}>
+                                <h3 >Let’s <span style={{ color: '#008446' }}>Get In Touch With Us</span></h3>
+                            </div>
                         </div>
                     </Col>
                 </Row>
